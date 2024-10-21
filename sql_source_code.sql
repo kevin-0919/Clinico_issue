@@ -99,8 +99,8 @@ SELECT
     b.end_number
 FROM invoices_config config
 LEFT JOIN invoice_books b ON  config.invoice_number LIKE b.track || '%'
-WHERE config.id NOT IN (
-    SELECT id
+WHERE config.invoice_number NOT IN (
+    SELECT invoice_number
     FROM invoices_test
 )
 ORDER BY config.id
